@@ -31,7 +31,7 @@ wire [2:0] func3;
 //wire [4:0] rs1,rs2,rd;
 wire [31:0] instr;
 
-//OMG THE CU, idk y i am feeling so nervous and excited at the same time I am just writing code
+// idk y i am feeling so nervous and excited at the same time I am just writing code
 //CU
 wire MR, MW, MemtoReg;
 
