@@ -6,10 +6,11 @@ This repo contains code for Single cycle rv32i processor
 
 # RISC-V Processor Project
 
-**Overview**
+<h2> Overview: </h2>
+    
 This project involves the design and implementation of a RISC-V Processor (RV32I). The processor is capable of executing a variety of instructions defined in the RV32I instruction set architecture, including I-type, R-type, S-type, B-type, J-type, and U-type (LUI only). The processor has 32KB of data memory and 2^22 x 32-bit instruction memory. This design was implemented in Verilog and has been tested with a simple C program execution.
 
-Processor Design
+<h2>Processor Design:</h2>
 The RISC-V processor follows the RV32I base architecture, supporting the following instruction types:
 
 I-type
@@ -24,8 +25,9 @@ J-type
 
 U-type (Only LUI supported)
 
-Modules
+<h2>Modules</h2>
 The design is divided into the following major modules:
+
 
 ALU (Arithmetic Logic Unit): Handles arithmetic and logical operations.
 
@@ -43,14 +45,14 @@ Data Memory (data_mem): Handles data operations and is connected to the processo
 
 RV32I Processor (rv32i_processor): Top-level module that integrates all the above modules to form the complete processor.
 
-References
+<h2>REFERENCES</h2>
 RISC-V Instruction Set Manual - https://riscv.org/specifications/
 
 "Computer Organization and Design" by David A. Patterson and John L. Hennessy.
 
 Verilog and FPGA tutorials for implementing RISC-V processors.
 
-Working
+<h2>Working</h2>
 Instruction Flow
 Instruction Fetch (IF): The PC (Program Counter) points to the current instruction in memory. The instruction is fetched from inst_mem and passed to inst_decode.
 
@@ -67,22 +69,20 @@ Data Memory: A 32-bit wide, 32KB memory block is used for storing and accessing 
 
 Instruction Memory: A 32-bit wide, 2^22 x 32-bit instruction memory is used to store the program instructions.
 
-Steps to Run a C Program on Your Processor
+<h2>Steps to Run a C Program on Your Processor</h2>
 Follow the steps below to run a simple C program on your RISC-V processor:
 
-Step 1: Write the C Program
-Write your C program as you would normally. For example, a simple program that prints "Hello, RISC-V":
+**Step 1: Write the C Program**
+Write your C program as you would normally. For example: :
 
-c
-Copy
-Edit
 #include <stdio.h>
 
 int main() {
     printf("Hello, RISC-V\n");
     return 0;
 }
-Step 2: Compile C to RISC-V Assembly
+
+**Step 2: Compile C to RISC-V Assembly**
 Go to Compiler Explorer.
 
 Paste your C code into the editor.
@@ -93,35 +93,35 @@ The site will generate the corresponding RISC-V Assembly code.
 
 Copy the generated assembly code.
 
-Step 3: Convert Assembly to Machine Code
+**Step 3: Convert Assembly to Machine Code**
 Visit Venus Simulator.
 
 Paste the RISC-V assembly code into the editor.
 
 Click "Assemble" to generate the machine code.
 
-Download or copy the hexadecimal machine code.
+Dump the hexadecimal machine code.
 
-Step 4: Load the Machine Code into the Processor
-Create a text file and paste the machine code (in hexadecimal format) into it.
+**Step 4: Load the Machine Code into the Processor**
+Create a text file and paste the machine code (in hexadecimal format) into it, in separate lines.
 
 Change the file extension to .hex.
 
 Load this .hex file into your processor’s instruction memory (inst_mem) using the readmemh function.
 
-Step 5: Run the Processor
+**Step 5: Run the Processor**
 Compile and run your processor simulation in ModelSim (or your chosen Verilog simulator).
 
 The processor will fetch, decode, and execute the instructions from the loaded machine code.
 
 You can view the output (such as printed text) in the simulation's console or monitor.
 
-Step 6: Debug and Verify
+**Step 6: Debug and Verify**
 If the program doesn't work as expected, use simulation tools to debug the processor’s control flow, memory access, and ALU operations.
 
 Ensure that the C program’s logic is correctly translated into the RISC-V instructions.
 
-Conclusion
+<h2>Conclusion:</h2>
 This project demonstrates the implementation of a simple RISC-V processor capable of running C programs. The design includes core modules such as the ALU, Control Unit, instruction and data memory, and various processing components. The processor successfully handles a variety of RISC-V instructions and can execute user programs after converting them to machine code.
 
 Future Work
@@ -130,3 +130,6 @@ Add support for other RISC-V instructions beyond the RV32I subset.
 Implement interrupts and exception handling mechanisms.
 
 Optimize performance by improving memory access and pipeline stages.
+
+
+Good Luck!
